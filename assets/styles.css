@@ -180,6 +180,10 @@ nav {
 .hero-visual {
   position: relative;
   padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
 }
 
 .hero-visual::before,
@@ -206,6 +210,54 @@ nav {
   bottom: 10%;
   right: 15%;
   filter: blur(10px);
+}
+
+.ai-figure {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(22px);
+}
+
+.ai-figure::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.45), rgba(76, 110, 245, 0.15));
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.ai-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ai-figure--hero {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.ai-figure--services,
+.ai-figure--about,
+.ai-figure--contact {
+  min-height: 100%;
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+.section-intro {
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-grid {
+  align-items: flex-start;
+  gap: 2.5rem;
 }
 
 .hero-card {
@@ -699,6 +751,18 @@ footer p {
 
   header {
     padding-top: 1rem;
+  }
+
+  .hero-visual {
+    padding: 2.2rem 1.2rem;
+  }
+
+  .ai-figure--hero {
+    max-width: 100%;
+  }
+
+  .section-intro {
+    margin-bottom: 2.5rem;
   }
 
   footer .inner {

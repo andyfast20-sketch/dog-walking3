@@ -88,16 +88,16 @@ faqItems.forEach((item) => {
 const gallery = document.querySelector("[data-gallery]");
 if (gallery) {
   const galleryImages = [
-    "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1525253013412-55c1a69a5738?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1546291884-0e4b5d9c83d9?auto=format&fit=crop&w=900&q=80",
+    "assets/images/gallery-1.svg",
+    "assets/images/gallery-2.svg",
+    "assets/images/gallery-3.svg",
+    "assets/images/gallery-4.svg",
   ];
 
   galleryImages.forEach((src, index) => {
     const item = document.createElement("figure");
     item.className = "gallery-item";
-    item.innerHTML = `<img src="${src}" alt="Happy dog enjoying a Luxe Leash walk ${index + 1}" />`;
+    item.innerHTML = `<img src="${src}" alt="AI generated Luxe Leash walk moment ${index + 1}" loading="lazy" />`;
     gallery.appendChild(item);
   });
 }

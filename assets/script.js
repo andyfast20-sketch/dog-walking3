@@ -88,16 +88,32 @@ faqItems.forEach((item) => {
 const gallery = document.querySelector("[data-gallery]");
 if (gallery) {
   const galleryImages = [
-    "assets/images/gallery-1.svg",
-    "assets/images/gallery-2.svg",
-    "assets/images/gallery-3.svg",
-    "assets/images/gallery-4.svg",
+    {
+      src: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=900&q=80",
+      alt: "Dog and walker silhouetted against a Hyde sunset",
+      caption: "Sunset cool-down at Werneth Low",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1525253013412-55b77772e44f?auto=format&fit=crop&w=900&q=80",
+      alt: "Walker greeting a golden retriever on a Hyde doorstep",
+      caption: "Friendly pick-ups across Hyde & Denton",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80",
+      alt: "Calm dog waiting on a Denton pavement",
+      caption: "Patient pals ready for their walk",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+      alt: "Dog bounding through long grass",
+      caption: "Weekend zoomies on open trails",
+    },
   ];
 
-  galleryImages.forEach((src, index) => {
+  galleryImages.forEach(({ src, alt, caption }) => {
     const item = document.createElement("figure");
     item.className = "gallery-item";
-    item.innerHTML = `<img src="${src}" alt="AI generated Luxe Leash walk moment ${index + 1}" loading="lazy" />`;
+    item.innerHTML = `<img src="${src}" alt="${alt}" loading="lazy" />${caption ? `<figcaption>${caption}</figcaption>` : ""}`;
     gallery.appendChild(item);
   });
 }

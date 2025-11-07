@@ -105,10 +105,14 @@ main {
   overflow: hidden;
   margin-top: 2.5rem;
   border-radius: var(--radius-lg);
-  background: linear-gradient(120deg, rgba(31, 59, 44, 0.82), rgba(79, 138, 93, 0.82)),
+  background: linear-gradient(
+      120deg,
+      rgba(31, 59, 44, 0.78) 8%,
+      rgba(79, 138, 93, 0.72) 45%,
+      rgba(255, 205, 135, 0.7) 95%
+    ),
     url("https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1800&q=80") center/cover
       no-repeat;
-    url("images/hero-ai.svg") center/cover no-repeat;
   color: #fff;
   padding: clamp(2.5rem, 5vw, 4.5rem);
 }
@@ -117,7 +121,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(20, 38, 29, 0.75) 20%, rgba(79, 138, 93, 0.55) 80%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(37, 59, 46, 0.4));
   z-index: 0;
 }
 
@@ -142,31 +146,7 @@ main {
 .hero-visual {
   position: relative;
   display: grid;
-  gap: 1.5rem;
-}
-
-.hero-photo {
-  margin: 0;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  position: relative;
-}
-
-.hero-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.25));
-}
-
-.hero-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+  gap: 1.8rem;
 }
 
 .hero-copy h1 {
@@ -190,27 +170,11 @@ main {
   color: var(--green-700);
 }
 
-}
-
-.eyebrow {
-  display: inline-block;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.hero.hero--inner .eyebrow {
-  color: var(--green-700);
-}
-
 .hero-copy p {
   margin: 0 0 1.5rem;
   font-size: 1.05rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .hero.hero--inner .hero-copy p {
@@ -298,10 +262,6 @@ main {
   color: var(--green-700);
 }
 
-.hero-visual {
-  position: relative;
-}
-
 .hero-card {
   background: #fff;
   color: var(--text);
@@ -367,6 +327,86 @@ main {
 .hero.hero--inner .btn-secondary:hover,
 .hero.hero--inner .btn-secondary:focus-visible {
   background: rgba(79, 138, 93, 0.2);
+}
+
+.hero-gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 1.1rem;
+}
+
+.hero-gallery__item {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-gallery__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1);
+}
+
+.hero-gallery__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.22));
+}
+
+.hero-gallery__item--primary {
+  grid-column: 1 / -1;
+  aspect-ratio: 4 / 3;
+}
+
+.hero-gallery__item--secondary {
+  aspect-ratio: 1;
+}
+
+.hero-gallery__item--tertiary {
+  aspect-ratio: 1;
+  transform: translateY(-14%);
+}
+
+.hero-bubble {
+  position: absolute;
+  right: -12%;
+  bottom: -6%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
+  border-radius: 22px;
+  padding: 1rem 1.35rem;
+  width: max-content;
+  box-shadow: 0 20px 35px rgba(31, 59, 44, 0.18);
+  font-weight: 700;
+  text-align: center;
+  display: grid;
+  gap: 0.25rem;
+  transform: rotate(-4deg);
+}
+
+.hero-bubble span {
+  display: block;
+  font-size: 1.85rem;
+  color: var(--accent);
+  font-family: "Merriweather", serif;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero-cta,
@@ -1260,6 +1300,29 @@ footer p {
 .socials a:hover,
 .socials a:focus-visible {
   background: rgba(255, 255, 255, 0.24);
+}
+
+@media (max-width: 768px) {
+  .hero-gallery {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 0.9rem;
+  }
+
+  .hero-gallery__item--primary {
+    aspect-ratio: 3 / 2;
+  }
+
+  .hero-gallery__item--tertiary {
+    transform: translateY(-8%);
+  }
+
+  .hero-bubble {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 720px) {

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">AI generated illustration for contacting Luxe Leash Walks</title>
+  <desc id="desc">Luminous gradients, floating envelopes, and a poised dog depict the concierge booking experience.</desc>
+  <defs>
+    <linearGradient id="contactGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe8f6" />
+      <stop offset="40%" stop-color="#f0f6ff" />
+      <stop offset="100%" stop-color="#c8fff0" />
+    </linearGradient>
+    <radialGradient id="halo" cx="60%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ffd8b2" />
+      <stop offset="70%" stop-color="#7cb8ff" />
+      <stop offset="100%" stop-color="#5ff2d5" />
+    </radialGradient>
+    <linearGradient id="dog" x1="0%" x2="100%">
+      <stop offset="0%" stop-color="#ffcf6c" />
+      <stop offset="100%" stop-color="#ff7fa3" />
+    </linearGradient>
+    <filter id="mist" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" seed="18" />
+      <feColorMatrix type="matrix" values="0.6 0 0 0 0.12 0 0.6 0 0 0.08 0 0 0.75 0 0.12 0 0 0 0.65 0" />
+      <feGaussianBlur stdDeviation="12" />
+    </filter>
+  </defs>
+  <rect width="640" height="520" fill="url(#contactGradient)" />
+  <g filter="url(#mist)">
+    <circle cx="460" cy="140" r="160" fill="url(#halo)" opacity="0.4" />
+    <circle cx="180" cy="400" r="180" fill="rgba(255, 154, 182, 0.35)" />
+  </g>
+  <g opacity="0.6">
+    <path d="M60 360c60 0 120-40 180-40s120 40 180 40 120-40 180-40 120 40 120 40v160H-60Z" fill="rgba(124, 139, 255, 0.25)" />
+  </g>
+  <g transform="translate(120 140)">
+    <rect width="220" height="160" rx="28" fill="rgba(255, 255, 255, 0.85)" stroke="rgba(124, 139, 255, 0.35)" stroke-width="4" />
+    <path d="M32 48h156" stroke="#7c8bff" stroke-width="10" stroke-linecap="round" opacity="0.8" />
+    <path d="M32 86h132" stroke="#ff7fa3" stroke-width="8" stroke-linecap="round" opacity="0.7" />
+    <path d="M32 122h96" stroke="#ffd37a" stroke-width="8" stroke-linecap="round" opacity="0.6" />
+    <path d="M20 32h180l-90 80Z" fill="#f8faff" stroke="rgba(124, 139, 255, 0.35)" stroke-width="3" />
+  </g>
+  <g transform="translate(360 220)">
+    <path d="M24 126c-10 0-20-6-24-12l-14-22c-6-10-2-22 8-22h24c8 0 16-4 20-10l18-28c6-10 22-10 28 0l18 28c4 6 12 10 20 10h28c10 0 14 12 8 22l-16 24c-6 8-16 12-26 12Z" fill="url(#dog)" stroke="rgba(255,255,255,0.75)" stroke-width="5" stroke-linejoin="round" />
+    <circle cx="22" cy="74" r="14" fill="#fff9ef" />
+    <path d="M72 104l102-58" fill="none" stroke="#7c8bff" stroke-width="6" stroke-linecap="round" stroke-dasharray="6 18" />
+    <circle cx="112" cy="10" r="20" fill="#4655ff" opacity="0.88" />
+    <path d="M112 34c14 18 20 44 18 72l-10 58" fill="none" stroke="#4655ff" stroke-width="7" stroke-linecap="round" />
+    <path d="M90 108l-46 68" fill="none" stroke="#4655ff" stroke-width="6" stroke-linecap="round" />
+    <path d="M128 110l52 74" fill="none" stroke="#4655ff" stroke-width="6" stroke-linecap="round" />
+  </g>
+  <g opacity="0.7">
+    <g transform="translate(420 60)" fill="#fff">
+      <path d="M0 0h120l-60 60Z" opacity="0.8" />
+      <path d="M12 12h96l-48 42Z" fill="#f7fbff" />
+    </g>
+    <g transform="translate(500 260)" fill="#fff">
+      <path d="M0 0h100l-50 52Z" opacity="0.8" />
+      <path d="M10 10h80l-40 36Z" fill="#f7fbff" />
+    </g>
+  </g>
+</svg>
